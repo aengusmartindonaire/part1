@@ -24,7 +24,7 @@ fi
 
 echo "Running Spark job with parallelism level equals $parallelism_parameter..."
 /usr/local/spark/bin/spark-submit --master=spark://$SPARK_MASTER:7077 \
-    --conf spark.default.parallelism=$parallelism_parameter \ 
+    --conf spark.default.parallelism=$parallelism_parameter \
     ./part1.py hdfs://$SPARK_MASTER:9000/lab2p1/input/parking2024.csv $parallelism_parameter
 
 # Stop Hadoop and Spark services
